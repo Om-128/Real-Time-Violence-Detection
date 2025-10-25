@@ -9,6 +9,9 @@ from src.components.data_transformation import DataTransformation
 class DataIngestionConfig:
     BASE_DIR = r"O:\AI_ML\Github\Real-Time-Violence-Detection\data\Real Life Violence Dataset"
     CATAGORIES = ["Violence", "NonViolence"]
+    ARTIFACTS_DIR = os.path.join("artifacts")  # folder to save processed data
+    FEATURES_PATH = os.path.join(ARTIFACTS_DIR, "processed_features.npy")
+    LABELS_PATH = os.path.join(ARTIFACTS_DIR, "processed_labels.npy")
 
 class DataIngestion:
     """
@@ -47,15 +50,3 @@ class DataIngestion:
             raise CustomException(e, sys)
 
 
-if __name__ == "__main__":
-    try:
-        data_ingestion = DataIngestion()
-        video_paths, labels = data_ingestion.create_dataset()
-        data_transformation = DataTransformation()
-        features, video_labels = data_transformation.frame_extraction(video_paths, labels)
-
-        print(f"Extracted Features Shape: {features.shape}")
-        print(f"Extracted Labels Shape: {video_labels.shape}")
-
-    except Exception as e:
-        raise CustomException(e, sys)

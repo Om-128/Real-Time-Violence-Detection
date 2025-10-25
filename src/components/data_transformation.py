@@ -29,36 +29,38 @@ class DataTransformation:
 
                 frame_list = []
 
-                #Read the video file
+                '''Read the video file'''
                 video_reader = cv2.VideoCapture(video)
-                # Calculate the total video frames count.
+                '''Calculate the total video frames count.'''
                 total_video_frame_count = int(video_reader.get(cv2.CAP_PROP_FRAME_COUNT))
-                # Calculate the the interval after which frames will be added to the list.
+                '''Calculate the the interval after which frames will be added to the list.'''
                 frame_interval = max(int(total_video_frame_count / self.transformation_config.SEQUENCE_LENGTH), 1)
 
-                #Iterate through the video and extract frames
+                '''Iterate through the video and extract frames'''
                 for frame_counter in range(self.transformation_config.SEQUENCE_LENGTH):
-                    #Set the video reader to the correct frame position
+                    '''Set the video reader to the correct frame position.'''
                     video_reader.set(cv2.CAP_PROP_POS_FRAMES, frame_counter * frame_interval)
-                    #Read the frame
+                    '''Read the frame'''
                     success, frame = video_reader.read()
 
                     if not success:
                         break
                     
-                    #Resize the frame
+                    '''Resize the frame'''
                     resized_frame = cv2.resize(frame, (self.transformation_config.WIDTH, self.transformation_config.HEIGHT))
-                    #Normalize the frame
-                    normalized_frame = resized_frame / 255.0
-                    #Append the frame to the frame list
+                    '''Normalize the frame'''
+                    normalized_frame = (resized_frame / 255.0).astype(np.float32)
+                    '''Append the frame to the frame list'''
                     frame_list.append(normalized_frame)
                 
                 video_reader.release()
 
+                '''Ensure we have the correct number of frames'''
                 if len(frame_list) == self.transformation_config.SEQUENCE_LENGTH:
                     features.append(frame_list)
                     video_labels.append(labels[index])
 
+            ''' Convert lists to numpy arrays '''
             return np.array(features), np.array(video_labels)
 
         except Exception as e:
