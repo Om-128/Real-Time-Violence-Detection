@@ -3,6 +3,7 @@ import sys
 import pandas as pd
 from dataclasses import dataclass
 from src.exception import CustomException
+from src.components.data_transformation import DataTransformation
 
 @dataclass
 class DataIngestionConfig:
@@ -50,5 +51,11 @@ if __name__ == "__main__":
     try:
         data_ingestion = DataIngestion()
         video_paths, labels = data_ingestion.create_dataset()
+        data_transformation = DataTransformation()
+        features, video_labels = data_transformation.frame_extraction(video_paths, labels)
+
+        print(f"Extracted Features Shape: {features.shape}")
+        print(f"Extracted Labels Shape: {video_labels.shape}")
+
     except Exception as e:
         raise CustomException(e, sys)
