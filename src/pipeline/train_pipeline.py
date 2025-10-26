@@ -4,8 +4,13 @@ import pandas as pd
 import numpy as np
 from dataclasses import dataclass
 from src.exception import CustomException
+
+from sklearn.model_selection import train_test_split
+from tensorflow.keras.utils import to_categorical
+
 from src.components.data_ingestion import DataIngestion
 from src.components.data_transformation import DataTransformation
+from src.components.model_trainer import ModelTrainer
 
 if __name__ == "__main__":
     try:
@@ -22,14 +27,20 @@ if __name__ == "__main__":
         else:
             video_paths, labels = data_ingestion.create_dataset()
             data_transformation = DataTransformation()
-            features, video_labels = data_transformation.frame_extraction(video_paths, labels)
+            features, labels = data_transformation.frame_extraction(video_paths, labels)
 
             # Save processed features and labels to disk
             np.save(data_ingestion.ingestion_config.FEATURES_PATH, features)
-            np.save(data_ingestion.ingestion_config.LABELS_PATH, video_labels)
+            np.save(data_ingestion.ingestion_config.LABELS_PATH, labels)
 
-        print(f"Extracted Features Shape: {features.shape}")
-        print(f"Extracted Labels Shape: {video_labels.shape}")
+        ''' Create a simple train-test-val split '''
+
+        one_hot_encoded_labels = to_categorical(labels)
+
+        x_train, x_temp, y_train, y_temp = train_test_split(features, one_hot_encoded_labels, test_size=0.2, shuffle=True, random_state=42, stratify=labels)
+        x_val, x_test, y_val, y_test = train_test_split(x_temp, y_temp, test_size=0.5, random_state=42, stratify=y_temp)
+
+        model_trainer = ModelTrainer(x_train, x_val, x_test, y_train, y_val, y_test)
 
     except Exception as e:
         raise CustomException(e, sys)
