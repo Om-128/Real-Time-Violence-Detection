@@ -9,7 +9,7 @@ from src.exception import CustomException
 
 @dataclass
 class DataTransformationConfig:
-    SEQUENCE_LENGTH = 15  # Number of frames per video sequence
+    SEQUENCE_LENGTH = 10  # Number of frames per video sequence
     HEIGHT = 224  # Frame height
     WIDTH = 224   # Frame width
 
@@ -49,7 +49,7 @@ class DataTransformation:
                     '''Resize the frame'''
                     resized_frame = cv2.resize(frame, (self.transformation_config.WIDTH, self.transformation_config.HEIGHT))
                     '''Normalize the frame'''
-                    normalized_frame = (resized_frame / 255.0).astype(np.float32)
+                    normalized_frame = (resized_frame / 255.0).astype(np.float16)
                     '''Append the frame to the frame list'''
                     frame_list.append(normalized_frame)
                 
