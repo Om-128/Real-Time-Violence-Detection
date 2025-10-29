@@ -122,7 +122,7 @@ python main.py
 
 **Om — Data Scientist**  
 📧 omtambat284@gmail.com 
-🔗 [LinkedIn](https://linkedin.com/in/yourprofile)
+🔗 [LinkedIn](https://www.linkedin.com/in/omtambat/)
 
 ---
 
