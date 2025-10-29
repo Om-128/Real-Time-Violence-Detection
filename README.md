@@ -56,6 +56,10 @@ https://github.com/user-attachments/assets/19af664f-7b82-41cb-b2e4-e76f41c1af82
 ## 🧺 Dataset
 
 - **Source:** [Kaggle](https://www.kaggle.com/datasets/mohamedmustafa/real-life-violence-situations-dataset).
+- **Dataset Size**
+  - Total Videos: 2000
+    - 1000 Violence
+    - 1000 Non-Violence
 - **Structure:**  
   - Videos divided into *Violence* and *Non-Violence* classes.  
   - Each video is processed to extract pose keypoints for temporal modeling.  
