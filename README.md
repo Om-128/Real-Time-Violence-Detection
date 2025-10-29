@@ -6,7 +6,7 @@ It leverages **YOLOv8 Pose** for keypoint extraction and a **custom trained Mobi
 ---
 
 ## 🎬 Demo Video
-🎥 [Watch the Demo on YouTube](https://youtu.be/bcP7qmx-6s0)
+🎥 [Watch](https://github.com/user-attachments/assets/19af664f-7b82-41cb-b2e4-e76f41c1af82)
 
 ---
 
@@ -115,7 +115,7 @@ python app.py
 ## 👨‍💻 Author
 
 **Om — Data Scientist**  
-📧 omtambat284@gmail.com.com  
+📧 omtambat284@gmail.com 
 🔗 [LinkedIn](https://linkedin.com/in/yourprofile)
 
 ---
