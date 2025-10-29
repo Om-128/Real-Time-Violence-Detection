@@ -14,7 +14,7 @@ https://github.com/user-attachments/assets/19af664f-7b82-41cb-b2e4-e76f41c1af82
 
 | Normal Activity | Violence Detected |
 |-----------------|------------------|
-| ![Normal Pose](assets/normal_pose.jpg) | ![Violence Detected](assets/violence_pose.jpg) |
+| ![Normal Pose](https://github.com/user-attachments/assets/f2210b77-e7b8-4590-9727-248c16a7c7a3) | ![Violence Detected](https://github.com/user-attachments/assets/6a9b311f-8e07-4b71-8269-326cef5ea7d1) |
 
 ---
 
