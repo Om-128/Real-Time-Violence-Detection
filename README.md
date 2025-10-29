@@ -86,11 +86,17 @@ https://github.com/user-attachments/assets/19af664f-7b82-41cb-b2e4-e76f41c1af82
 git clone https://github.com/yourusername/violence-detection-pose.git
 cd violence-detection-pose
 
+# Download The Dataset
+[Kaggle](https://www.kaggle.com/datasets/mohamedmustafa/
+
 # Install dependencies
 pip install -r requirements.txt
 
+# Train Pipeline
+python train_pipeline.py
+
 # Run the app
-python app.py
+python main.py
 ```
 
 ---
