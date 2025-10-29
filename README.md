@@ -37,7 +37,7 @@ https://github.com/user-attachments/assets/19af664f-7b82-41cb-b2e4-e76f41c1af82
 | Computer Vision | OpenCV |
 | Deep Learning | TensorFlow / Keras |
 | Pose Estimation | Ultralytics YOLOv8-Pose |
-| Model Serving | MobileNetV2 + LSTM |
+| Model Serving | Custom train_pipeline |
 | Data Handling | NumPy, Pandas |
 
 ---
