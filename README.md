@@ -83,7 +83,7 @@ https://github.com/user-attachments/assets/19af664f-7b82-41cb-b2e4-e76f41c1af82
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/violence-detection-pose.git
+git clone https://github.com/Om-128/Real-Time-Violence-Detection.git
 cd violence-detection-pose
 
 # Download The Dataset
