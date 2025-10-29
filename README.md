@@ -26,6 +26,8 @@ https://github.com/user-attachments/assets/19af664f-7b82-41cb-b2e4-e76f41c1af82
   - Collect a short frame sequence (e.g., 10 frames).  
   - Pass the sequence through an **MobileNet + LSTM model** to analyze temporal motion patterns.  
   - Display “Violence” or “No Violence” on the video feed based on prediction.  
+- **Model Accuracy:**
+  - ~93% on validation data.
 
 ---
 
