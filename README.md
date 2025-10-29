@@ -1,7 +1,7 @@
 # 🧠 Real-Time Violence Detection using Pose Estimation
 
 This project detects **violent actions in real-time video streams** using **human pose estimation** and **deep learning-based temporal analysis**.  
-It leverages **YOLOv8 Pose** for keypoint extraction and a **custom trained LSTM-based model** to predict violence from human motion sequences.
+It leverages **YOLOv8 Pose** for keypoint extraction and a **custom trained MobileNet + LSTM based model** to predict violence from human motion sequences.
 
 ---
 
@@ -24,7 +24,7 @@ It leverages **YOLOv8 Pose** for keypoint extraction and a **custom trained LSTM
 - **Method:**  
   - Extract pose keypoints from each frame using YOLOv8 Pose model.  
   - Collect a short frame sequence (e.g., 10 frames).  
-  - Pass the sequence through an **LSTM model** to analyze temporal motion patterns.  
+  - Pass the sequence through an **MobileNet + LSTM model** to analyze temporal motion patterns.  
   - Display “Violence” or “No Violence” on the video feed based on prediction.  
 
 ---
@@ -37,9 +37,8 @@ It leverages **YOLOv8 Pose** for keypoint extraction and a **custom trained LSTM
 | Computer Vision | OpenCV |
 | Deep Learning | TensorFlow / Keras |
 | Pose Estimation | Ultralytics YOLOv8-Pose |
-| Model Serving | Custom `PredictPipeline` |
+| Model Serving | MobileNetV2 + LSTM |
 | Data Handling | NumPy, Pandas |
-| Visualization | Matplotlib (for EDA) |
 
 ---
 
@@ -48,13 +47,13 @@ It leverages **YOLOv8 Pose** for keypoint extraction and a **custom trained LSTM
 | Model | Purpose |
 |--------|----------|
 | **YOLOv8n-pose.pt** | Extracts 17 human body keypoints per frame. |
-| **LSTM Sequential Model** | Classifies sequence of pose coordinates into “Violence” or “No Violence.” |
+| **MobileNet + LSTM Sequential Model** | Classifies sequence of pose coordinates into “Violence” or “No Violence.” |
 
 ---
 
 ## 🧺 Dataset
 
-- **Source:** Custom dataset created from **surveillance and crowd-violence datasets** (e.g., *Hockey Fight*, *Real-Life Violence Dataset*).  
+- **Source:** [Kaggle](https://www.kaggle.com/datasets/mohamedmustafa/real-life-violence-situations-dataset).
 - **Structure:**  
   - Videos divided into *Violence* and *Non-Violence* classes.  
   - Each video is processed to extract pose keypoints for temporal modeling.  
@@ -115,8 +114,8 @@ python app.py
 
 ## 👨‍💻 Author
 
-**Om — Software Developer | AI & ML Enthusiast**  
-📧 your.email@example.com  
+**Om — Data Scientist**  
+📧 omtambat284@gmail.com.com  
 🔗 [LinkedIn](https://linkedin.com/in/yourprofile)
 
 ---

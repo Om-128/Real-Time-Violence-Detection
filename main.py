@@ -19,6 +19,7 @@ confidence = 0.0
 ''' Capture Video '''
 cap = cv2.VideoCapture(1)
 
+
 while True:
     ret, frame = cap.read()
 
@@ -57,6 +58,10 @@ while True:
     cv2.putText(annotated_frame, f"{label} ({confidence*100:.1f}%)", (10, 30),
                 cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2)
     
+    ''' Make a full screen window '''
+    cv2.namedWindow('YOLOv8 Pose Estimation', cv2.WINDOW_NORMAL)
+    
+    ''' Display '''
     cv2.imshow('YOLOv8 Pose Estimation', annotated_frame)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
