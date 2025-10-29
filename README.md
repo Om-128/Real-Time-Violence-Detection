@@ -111,7 +111,7 @@ python main.py
  ┃ ┗ predict_pipeline.py
  ┣ 📂 models/
  ┃ ┗ violence_lstm_model.h5
- ┣ app.py
+ ┣ main.py
  ┣ README.md
  ┣ requirements.txt
 ```
