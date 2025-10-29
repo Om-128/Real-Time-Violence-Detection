@@ -6,7 +6,7 @@ It leverages **YOLOv8 Pose** for keypoint extraction and a **custom trained Mobi
 ---
 
 ## 🎬 Demo Video
-🎥 [Watch](https://github.com/user-attachments/assets/19af664f-7b82-41cb-b2e4-e76f41c1af82)
+https://github.com/user-attachments/assets/19af664f-7b82-41cb-b2e4-e76f41c1af82
 
 ---
 
