@@ -87,7 +87,7 @@ git clone https://github.com/yourusername/violence-detection-pose.git
 cd violence-detection-pose
 
 # Download The Dataset
-[Kaggle](https://www.kaggle.com/datasets/mohamedmustafa/)
+[Kaggle](https://www.kaggle.com/datasets/mohamedmustafa/real-life-violence-situations-dataset)
 
 # Install dependencies
 pip install -r requirements.txt
